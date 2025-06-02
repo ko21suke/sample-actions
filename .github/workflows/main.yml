@@ -1,19 +1,18 @@
-name: Command test for Linux
+name: command
 on: [push]
 jobs:
-  name: Command jobs
   command:
     name: Use Linux Coomands
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     steps:
-      - name: show ubuntu details
+      - name: Show ubuntu details
         run: lsb_release -a
       - name: Inspect files before checkout
         run: ls -la
-      - name: show cuurent directory before checkout
+      - name: show current directory before checkout
         run: pwd
-      - name: checkout
-        run: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Inspect files after checkout
         run: ls -la
       - name: show current directory after checkout
